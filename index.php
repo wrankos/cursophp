@@ -20,6 +20,7 @@
 	<script>
 	$(function(){
 		$('#name').on('change',function(){
+			$('#output').hide();
 			$('#form1').trigger('submit');
 		});
 		$('#form1').on('submit',function(e){
@@ -27,6 +28,7 @@
 			var params = { name : $('#name').val() };
 			$.get('externa.php', params, function( data ){
 				$('#output').html( data );
+				$('#output').show('slow');
 			});
 			//return false;
 		});
